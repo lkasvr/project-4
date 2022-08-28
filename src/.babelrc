@@ -6,8 +6,22 @@
     [
       "styled-components",
       {
-        "ssr": true
+        "ssr": true,
+        "displayName": true
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": false,
+            "displayName": false
+          }
+        ]
+      ]
+    }
+  }
 }
