@@ -16,7 +16,7 @@ export const Container = styled.div`
     ${Title} {
       margin-bottom: ${theme.spacings.xlarge};
     }
- `}
+  `}
 `;
 
 export const TextContainer = styled.div`

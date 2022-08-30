@@ -4,7 +4,7 @@ import { Container as TextComponent } from '../TextComponent/styles';
 export const Container = styled.div`
   ${({ theme }) => css`
     > ${TextComponent} {
-      margin-bottom: ${theme.spacings.xhuge}
+      margin-bottom: ${theme.spacings.xhuge};
     }
   `}
 `;
@@ -18,7 +18,7 @@ export const Grid = styled.div`
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
     }
- `}
+  `}
 `;
 
 export const GridElement = styled.div`

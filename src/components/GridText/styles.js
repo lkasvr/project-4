@@ -4,8 +4,8 @@ import { Container as TextComponent } from '../TextComponent/styles';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-      ${TextComponent} {
-      margin-bottom: ${theme.spacings.xhuge}
+    ${TextComponent} {
+      margin-bottom: ${theme.spacings.xhuge};
     }
   `}
 `;
@@ -22,24 +22,24 @@ export const Grid = styled.div`
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;
     }
- `}
+  `}
 `;
 
 export const GridElement = styled.div`
   ${({ theme }) => css`
-   ${HeadingContainer} {
-    position: relative;
-    left: 5rem;
-   }
+    ${HeadingContainer} {
+      position: relative;
+      left: 5rem;
+    }
 
-   ${HeadingContainer}::before {
-    counter-increment: grid-counter;
-    content: counter(grid-counter);
-    position: absolute;
-    font-size: ${theme.font.sizes.jumbo};
-    top: -3rem;
-    left: -5rem;
-    transform: rotate(8deg);
-   }
+    ${HeadingContainer}::before {
+      counter-increment: grid-counter;
+      content: counter(grid-counter);
+      position: absolute;
+      font-size: ${theme.font.sizes.jumbo};
+      top: -3rem;
+      left: -5rem;
+      transform: rotate(8deg);
+    }
   `}
 `;

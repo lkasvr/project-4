@@ -96,7 +96,8 @@
             "title": "Gallery",
             "description": "Uma breve descrição.\n\n",
             "text_grid": [],
-            "image_grid": [{
+            "image_grid": [
+              {
                 "id": 1,
                 "image": {
                   "data": [
@@ -137,7 +138,8 @@
                     }
                   ]
                 }
-              }],
+              }
+            ],
             "metadata": {
               "id": 2,
               "name": "grid-two",

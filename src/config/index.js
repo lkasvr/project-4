@@ -1,5 +1,5 @@
 export default {
-  url: 'https://strapi-v1-test.herokuapp.com/api/pages/?filters[slug]=',
-  siteName: '',
-  defaultSlug: 'dominic', // 'landing-page' <- (correto) ajustar na API
+  url: 'http://127.0.0.1:1337/api/pages/?filters[slug]=',
+  siteName: 'Dominic Esquadrais',
+  defaultSlug: 'dominic&populate=deep', // 'landing-page' <- (correto) ajustar na API
 };

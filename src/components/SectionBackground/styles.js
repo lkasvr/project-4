@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 const containerBackgroundActivate = (theme) => css`
-    background: ${theme.colors.primaryColor};
-    color: ${theme.colors.white};
+  background: ${theme.colors.primaryColor};
+  color: ${theme.colors.white};
 `;
 
 export const Container = styled.div`
