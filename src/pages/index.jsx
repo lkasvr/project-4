@@ -5,16 +5,22 @@ import styled from 'styled-components';
 import Home from '../templates/Home';
 
 import config from '../config';
+import { loadPages } from '../api/load-pages';
 
 export default function Index({ data = null }) {
-  console.log(data);
   return <Home data={data} />;
 }
 
 export const getStaticProps = async () => {
-  const raw = await fetch(config.url + config.defaultSlug);
-  const json = await raw.json();
-  const data = mapData(json.data);
+  let data = null;
+
+  try {
+    data = await loadPages('dominic');
+  } catch (e) {
+    console.error(`Error: ${e} --> in local: /pages/index.jsx -> line 20`);
+  }
+
+  if (!data || !data.length) return { notFound: true };
 
   return {
     props: {

@@ -2,8 +2,6 @@ import P from 'prop-types';
 import Head from 'next/head';
 
 import { Base } from '../Base';
-import { PageNotFound } from '../PageNotFound';
-import { Loading } from '../Loading';
 import { GridTwoColumns } from '../../components/GridTwoColumns';
 import { GridContent } from '../../components/GridContent';
 import { GridText } from '../../components/GridText';
@@ -11,8 +9,6 @@ import { GridImage } from '../../components/GridImage';
 import config from '../../config';
 
 function Home({ data }) {
-  if (!data || !data.length) return <PageNotFound />;
-
   const { menu, sections, footerHtml, slug, title } = data[0];
   const { links, text, link, srcImg } = menu;
 
@@ -23,9 +19,7 @@ function Home({ data }) {
       logoData={{ text, link, srcImg }}
     >
       <Head>
-        <title>
-          {title} | {config.siteName}
-        </title>
+        <title>{`${title} | ${config.siteName}`}</title>
       </Head>
       {sections.map((section, i) => {
         const { component } = section;
