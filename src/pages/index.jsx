@@ -4,7 +4,6 @@ import { mapData } from '../api/map-data';
 import styled from 'styled-components';
 import Home from '../templates/Home';
 
-import config from '../config';
 import { loadPages } from '../api/load-pages';
 
 export default function Index({ data = null }) {
