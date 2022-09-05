@@ -7,6 +7,7 @@ import { GridContent } from '../../components/GridContent';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
 import config from '../../config';
+import { theme } from '../../styles/theme';
 
 function Home({ data }) {
   const { menu, sections, footerHtml, slug, title } = data[0];
@@ -20,6 +21,11 @@ function Home({ data }) {
     >
       <Head>
         <title>{`${title} | ${config.siteName}`}</title>
+        <meta name="theme-color" content={theme.colors.primaryColor} />
+        <meta
+          name="description"
+          content="Um portfólio baseado em landing pages."
+        />
       </Head>
       {sections.map((section, i) => {
         const { component } = section;
