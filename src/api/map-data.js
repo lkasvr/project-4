@@ -5,11 +5,11 @@ export const mapData = (pagesData = [{}]) => {
   if (pagesData.length && Object.keys(pagesData[0]).length) {
     return pagesData.map((data) => {
       const {
-        footer_text: footerHtml = '',
-        slug = '',
-        title = '',
-        sections = [],
-        menu = {},
+        footer_text: footerHtml,
+        slug,
+        title,
+        sections,
+        menu,
       } = data.attributes;
 
       return {
