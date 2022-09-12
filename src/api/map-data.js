@@ -8,8 +8,8 @@ export const mapData = (pagesData = [{}]) => {
         footer_text: footerHtml,
         slug,
         title,
-        sections,
-        menu,
+        sections = [],
+        menu = {},
       } = data.attributes;
 
       return {
