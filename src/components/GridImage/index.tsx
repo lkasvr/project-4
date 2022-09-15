@@ -1,16 +1,29 @@
-import P from 'prop-types';
 import { Heading } from '../Heading';
 import { SectionBackground } from '../SectionBackground';
 import { TextComponent } from '../TextComponent';
 import * as Styled from './styles';
 
-export const GridText = ({
+export type GridImageElementProps = {
+  altText: string;
+  srcImg: string;
+};
+
+export type GridImageProps = {
+  background?: boolean;
+  title: string;
+  description: string;
+  grid: GridImageElementProps[];
+  sectionId?: string;
+  component?: string;
+};
+
+export const GridImage = ({
   title,
   description,
   grid,
   background = false,
   sectionId = '',
-}) => {
+}: GridImageProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
@@ -19,29 +32,13 @@ export const GridText = ({
         </Heading>
         <TextComponent>{description}</TextComponent>
         <Styled.Grid>
-          {grid.map((el) => (
-            <Styled.GridElement key={el.title}>
-              <Heading size="medium" colorDark={!background} as="h3">
-                {el.title}
-              </Heading>
-              <TextComponent>{el.description}</TextComponent>
+          {grid.map((el, i) => (
+            <Styled.GridElement key={`${el.srcImg}${el.altText}-${i}`}>
+              <Styled.Image src={el.srcImg} alt={el.altText} />
             </Styled.GridElement>
           ))}
         </Styled.Grid>
       </Styled.Container>
     </SectionBackground>
   );
-};
-
-GridText.propTypes = {
-  background: P.bool,
-  title: P.string.isRequired,
-  description: P.string.isRequired,
-  grid: P.arrayOf(
-    P.shape({
-      title: P.string.isRequired,
-      description: P.string.isRequired,
-    }),
-  ).isRequired,
-  sectionId: P.string,
 };

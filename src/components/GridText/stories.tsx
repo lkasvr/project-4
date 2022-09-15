@@ -1,4 +1,5 @@
-import { GridText } from './';
+import { Meta, Story } from '@storybook/react/types-6-0';
+import { GridText, GridTextProps } from './';
 
 import mock from './mock';
 
@@ -9,9 +10,9 @@ export default {
   argTypes: {
     children: { type: 'string' },
   },
-};
+} as Meta;
 
-export const Template = (args) => {
+export const Template: Story<GridTextProps> = (args) => {
   return (
     <div>
       <GridText {...args} />

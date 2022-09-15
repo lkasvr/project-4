@@ -22,18 +22,14 @@ export const Grid = styled.div`
 `;
 
 export const GridElement = styled.div`
-  ${() => css`
-    overflow: hidden;
-  `}
+  overflow: hidden;
 `;
 
 export const Image = styled.img`
-  ${() => css`
-    width: 100%;
-    transition: all 300ms ease-in-out;
+  width: 100%;
+  transition: all 300ms ease-in-out;
 
-    &:hover {
-      transform: scale(1.2) rotate(10deg);
-    }
-  `}
+  &:hover {
+    transform: scale(1.2) rotate(10deg);
+  }
 `;

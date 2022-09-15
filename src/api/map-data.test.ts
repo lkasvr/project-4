@@ -2,7 +2,7 @@ import { mapData } from './map-data';
 
 describe('map-data', () => {
   it('should map data even if there is no data', () => {
-    const pagesData = mapData();
+    const pagesData = mapData()[0];
     expect(pagesData.footerHtml).toBe('');
     expect(pagesData.slug).toBe('');
     expect(pagesData.title).toBe('');

@@ -1,4 +1,3 @@
-/*global module*/
 module.exports = {
   coverageDirectory: 'coverage',
   collectCoverage: true,
@@ -16,9 +15,15 @@ module.exports = {
 
   transform: {
     '^.+\\.js$': 'babel-jest',
+    '^.+\\.[jt]sx?$': 'babel-jest',
+    /*
     '^.+\\.jsx$': 'babel-jest',
+    '^.+\\.ts?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest',
+    */
   },
 
+  preset: 'ts-jest',
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
   transformIgnorePatterns: ['/node_modules/', '/.next/', '/.out/', '/public/'],

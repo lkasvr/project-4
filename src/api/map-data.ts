@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { PageData } from '../templates/Home';
 import { mapMenu } from './map-menu';
 import { mapSections } from './map-sections';
 
-export const mapData = (pagesData = [{}]) => {
+export const mapData = (pagesData = [{}] as any): PageData[] => {
   if (pagesData.length && Object.keys(pagesData[0]).length) {
-    return pagesData.map((data) => {
+    return pagesData.map((data: any): PageData => {
       const {
-        footer_text: footerHtml,
+        footer_text: footerHtml = '',
         slug,
         title,
         sections = [],
@@ -22,11 +24,13 @@ export const mapData = (pagesData = [{}]) => {
     });
   }
 
-  return {
-    footerHtml: '',
-    slug: '',
-    title: '',
-    sections: mapSections(),
-    menu: mapMenu(),
-  };
+  return [
+    {
+      footerHtml: '',
+      slug: '',
+      title: '',
+      sections: mapSections(),
+      menu: mapMenu(),
+    },
+  ];
 };
